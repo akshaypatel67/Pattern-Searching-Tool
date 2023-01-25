@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        .highlight
+        {
+            background-color:#96c8fa;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+        <div class="container flex flex-wrap items-center justify-between mx-auto" style="padding: 5px 55px;">
+            <a href="#" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Pattern Searching Tool</span>
+            </a>
+            <div class="flex items-center" id="navbar-default">
+                <select id="algorithm" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="kmp" selected>KMP Algorithm</option>
+                <option value="rk">Rabin-Karp Algorithm</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+  
+    <div style="width: 50%; padding: 50px; padding-left: 70px; float: left;">
+        <div class="flex items-center">
+            <label for="simple-search" class="sr-only">Search</label>
+            <div class="relative w-full">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input type="text" id="txtPattern" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="search pattern" required>
+            </div>
+            <button id="btnSearch" class="p-2.5 ml-2 text-sm font-medium text-white bg-sky-900 rounded-lg border border-sky-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span class="sr-only">Search</span>
+            </button>
+        </div>
+
+        <!-- <div style="margin-top: 20px; width: 50%;">
+        <label for="algorithm" class="block mb-2 text-sm font-medium text-gray-900">Select Algorithm</label>
+        <select id="algorithm" class="bg-sky-900 border border-gray-300 text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <option value="kmp" selected>KMP Algorithm</option>
+            <option value="rk">Rabin-Karp Algorithm</option>
+        </select>
+        </div> -->
+
+        <div style="margin-top: 20px;">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Enter Text Document</label>
+            <textarea id="txtText" rows="21" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Your text..."></textarea>
+        </div>
+    </div>
+
+    <div style="width: 50%; padding: 50px; padding-right: 70px; float: left;">
+        <div class="p-6 max-w-2xl bg-white rounded-lg border border-gray-200 shadow-md overflow-auto" style="max-height: 600px;">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Your Search Result</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700" id="divText">Please enter text.</p>
+        </div>
+    </div>
+    
+    <script src="kmp_algorithm.js"></script>
+    <script src="rabin_karp_algorithm.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
